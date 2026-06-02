@@ -27,6 +27,14 @@ public class PowerSet {
 //        subsets(ans, s,idx+1);// skip mei bss we increase the (idx).___
 
 
+//              newSubset("", 0)
+//                       ""
+//                  /          \
+//               a               ""
+//            /    \          /    \
+//          ab      a        b      ""
+//         / \     / \      / \     / \
+//      abc  ab  ac  a    bc  b   c   ""
     public static void main(String[] args) {
 
 
@@ -54,6 +62,7 @@ public class PowerSet {
 
         char ch = s.charAt(idx);
         newSubset(ans + ch, s, idx + 1 ,list);//pick
+
         newSubset(ans, s, idx+1, list);//skipping the character array
 
 

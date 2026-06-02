@@ -51,10 +51,6 @@ public class printArray {
 //    }
 
 
-
-
-
-
 }
 
 
