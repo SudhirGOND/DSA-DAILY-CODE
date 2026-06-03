@@ -1,5 +1,5 @@
 public class UniquePaths {
-
+    /// /Top down method tha --> Memoization
     static int dp[][];
 
     /// storing the values
@@ -18,5 +18,20 @@ public class UniquePaths {
 
     }
 
+
+    /// ////////////////////Bottom up method hain
+    /// / Tabulation method
+    public int noOfPaths(int m, int n) {
+        int[][] dp = new int[m][n]; ///  tp store the repeated values
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0) dp[i][j] = 1;
+                else dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+            }
+        }
+
+        return dp[m - 1][n - 1]; //// return the answer stored in the last corner of the matrix
+
+    }
 
 }
