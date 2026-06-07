@@ -17,6 +17,26 @@ public class HouseRobber {
         return ans;
     }
 
+
+    /// try to do the using the tabulation
+    ///
+    public int rob2(int[] arr) {
+        int n = arr.length;
+
+        // Create a dp array to store the maximum loot at each house
+        int[] dp = new int[n + 1];
+
+        // Base cases
+        dp[0] = 0;
+        dp[1] = arr[0];
+
+        // Fill the dp array using the bottom-up approach
+        for (int i = 2; i <= n; i++)
+            dp[i] = Math.max(arr[i - 1] + dp[i - 2], dp[i - 1]);
+
+        return dp[n];
+    }
+
     public int rob(int[] nums) {
         dp = new int[nums.length];
         Arrays.fill(dp, -1);/// filled with the -1 /// marking

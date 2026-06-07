@@ -11,7 +11,7 @@ public class MINCOSTCLIMBING {
         if (dp[i] != -1)
             return dp[i];
         int take = minPay(cost, i + 2);
-        int jump = minPay(cost, i + 1);
+        int jump = minPay(cost, i + 1); ////// House_robber(step->totally skipped) but in this(add the i+1 cost also)
 
         int ans = cost[i] + Math.min(take, jump);
         dp[i] = ans;

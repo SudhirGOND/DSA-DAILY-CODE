@@ -2,6 +2,13 @@ public class UniquePaths {
     /// /Top down method tha --> Memoization
     static int dp[][];
 
+    /// recurrence relation
+    public int paths_recur(int m, int n) {
+        if (m == 1 || n == 1) return 1;
+
+        return paths_recur(m, n - 1) + paths_recur(m - 1, n);
+    }
+
     /// storing the values
     public int paths(int m, int n) {
         if (m == 1 || n == 1)
