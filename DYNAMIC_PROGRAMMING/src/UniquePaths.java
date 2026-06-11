@@ -25,6 +25,8 @@ public class UniquePaths {
 
     }
 
+    //// knowing boout the raja is th main amnswer
+
 
     /// ////////////////////Bottom up method hain
     /// / Tabulation method
