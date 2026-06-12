@@ -19,6 +19,21 @@ public class MINCOSTCLIMBING {
 
     }
 
+    /// tabulation of this
+    ///
+    public int minpay(int[] cost, int i ) {
+        if (i >= cost.length)
+            return 0;
+        int[] sp =  new int[3];
+
+        int take = minPay(cost, i + 2);
+        int jump = minPay(cost, i + 1); ////// House_robber(step->totally skipped) but in this(add the i+1 cost also)
+
+        int ans = cost[i] + Math.min(take, jump);
+        dp[i] = ans;
+        return ans;
+    }
+
     public int minCostClimbingStairs(int[] cost) {
         int n = cost.length;
         dp = new int[n]; // 0 to n-1

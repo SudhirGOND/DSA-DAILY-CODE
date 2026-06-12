@@ -37,6 +37,26 @@ public class HouseRobber {
         return dp[n];
     }
 
+
+    /// / by the space optimized solution we have the following code
+
+
+    public int rob_space(int[] arr) {
+        int sp[] = new int[3];
+        int n = arr.length;
+        sp[1] = arr[0];
+        for (int i = 2; i <= n; i++) {
+            sp[2] = Math.max(arr[i] + sp[0], sp[1]);
+
+            //// space optimizing using the 3 size array
+
+            sp[0] = sp[1];
+            sp[1] = sp[2];
+        }
+
+        return sp[2];
+    }
+
     public int rob(int[] nums) {
         dp = new int[nums.length];
         Arrays.fill(dp, -1);/// filled with the -1 /// marking
