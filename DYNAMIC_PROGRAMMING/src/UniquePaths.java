@@ -25,10 +25,8 @@ public class UniquePaths {
 
     }
 
-    //// knowing boout the raja is th main amnswer
 
-
-    /// ////////////////////Bottom up method hain
+    /// /Bottom up method hain
     /// / Tabulation method
     public int noOfPaths(int m, int n) {
         int[][] dp = new int[m][n]; ///  tp store the repeated values
@@ -42,5 +40,45 @@ public class UniquePaths {
         return dp[m - 1][n - 1]; //// return the answer stored in the last corner of the matrix
 
     }
+
+    /// / SPACE OPTIMISATION TABULATION
+    public int noOfPaths_space(int m, int n) {
+        int[][] dp = new int[2][n]; ///  tp store the repeated values
+
+
+        for (int j = 0; j < n; j++) {
+            dp[0][j] = 1; ////  1st row mein sab jagah hum 1 ko put karenge
+        }
+
+        dp[1][0] = 1; /// put the 1 at the starting of the 2nd row
+
+
+        for (int i = 1; i <= m - 1; i++) {
+            ////m-1 times means rows ko copy kre rhe na to
+            ////sbse last row ko 2nd row prr lane k liye iteration should be  m  -1
+
+            /// filling the first row
+            if (i % 2 == 0) {
+
+                for (int j = 1; j < n; j++) {
+                    dp[1][j] = dp[0][j] + dp[0][j - 1];
+                }
+
+            } else {
+
+                //// copying 1st row to 0th row
+
+                for (int j = 1; j < n; j++) {
+                    dp[0][j] = dp[1][j] + dp[1][j - 1];
+                }
+            }
+
+        }
+
+
+        return Math.max(dp[1][n - 1], dp[0][n - 1]); //// return the answer stored in the last corner of the matrix
+
+    }
+
 
 }
