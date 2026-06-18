@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class UnbounndedKnapSack {
 
-
+     static int coins;
     public static void main(String[] args) {
         int[] val = {2, 3, 4, 25};
         int[] wt = {10, 3, 5, 9};
@@ -10,25 +10,26 @@ public class UnbounndedKnapSack {
         int n = val.length;
         //// the i   goes to 0 -->  n-1 and the C goes to C --> 0
         int[][] dp = new int[n][C + 1];
-        for (int  i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             for (int j = 0; j < C + 1; j++) {
                 dp[i][j] = -1;
             }
         }
-        ArrayList<Integer> coins = new ArrayList<>();
-        System.out.println("The maximum loot " + loot(0, val, wt, C,coins));
+        coins = 0;
+        System.out.println("The maximum loot " + loot(0, val, wt, C, coins));
+        System.out.println(coins);
 //        System.out.println("The maximum loot " + lootdp(0, val, wt, C, dp));
     }
 
-    private static int loot(int i, int[] val, int[] wt, int C, ArrayList<Integer> coins) {
+    private static int loot(int i, int[] val, int[] wt, int C, int coins) {
 
         if (i == wt.length) return 0;
 
-        int skip = loot(i + 1, val, wt,C,coins);
+        int skip = loot(i + 1, val, wt, C, coins);
         if (wt[i] > C) return skip;
 
-        int take = val[i] + loot(i, val, wt, C - wt[i],coins); //// we can loot the anything any time
-        coins.add(val[i]);
+        int take = val[i] + loot(i, val, wt, C - wt[i], coins +1); //// we can loot the anything any time
+
         return Math.max(skip, take);
     }
 
