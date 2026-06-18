@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class UnbounndedKnapSack {
 
 
@@ -13,20 +15,20 @@ public class UnbounndedKnapSack {
                 dp[i][j] = -1;
             }
         }
-
-        System.out.println("The maximum loot " + loot(0, val, wt, C));
+        ArrayList<Integer> coins = new ArrayList<>();
+        System.out.println("The maximum loot " + loot(0, val, wt, C,coins));
 //        System.out.println("The maximum loot " + lootdp(0, val, wt, C, dp));
     }
 
-    private static int loot(int i, int[] val, int[] wt, int C) {
+    private static int loot(int i, int[] val, int[] wt, int C, ArrayList<Integer> coins) {
 
         if (i == wt.length) return 0;
 
-        int skip = loot(i + 1, val, wt, C);
+        int skip = loot(i + 1, val, wt,C,coins);
         if (wt[i] > C) return skip;
 
-        int take = val[i] + loot(i, val, wt, C - wt[i]); //// we can loot the anything any time
-
+        int take = val[i] + loot(i, val, wt, C - wt[i],coins); //// we can loot the anything any time
+        coins.add(val[i]);
         return Math.max(skip, take);
     }
 
@@ -41,7 +43,7 @@ public class UnbounndedKnapSack {
 
         int skip = lootdp(i + 1, val, wt, C, dp);
         if (wt[i] > C) return dp[i][C] = skip;/// skip the step when you get the weight is greater than Capacity
-        int take = val[i] + lootdp(i + 1, val, wt, C - wt[i], dp);
+        int take = val[i] + lootdp(i, val, wt, C - wt[i], dp);
         return dp[i][C] = Math.max(skip, take); /// / before giving the answer store it in the dp array
     }
 
