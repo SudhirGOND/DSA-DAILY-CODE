@@ -1,4 +1,4 @@
-public class SubsetSum {
+public class G_SubsetSum {
 
 
     public static void main(String[] args) {

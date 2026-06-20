@@ -1,4 +1,4 @@
-public class Min_CostPath {
+public class A_Min_CostPath {
 
     public int minPathSum(int[][] grid) {
 

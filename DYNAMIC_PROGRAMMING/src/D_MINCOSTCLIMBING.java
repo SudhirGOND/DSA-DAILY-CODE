@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class MINCOSTCLIMBING {
+public class D_MINCOSTCLIMBING {
 
 
     static int dp[];

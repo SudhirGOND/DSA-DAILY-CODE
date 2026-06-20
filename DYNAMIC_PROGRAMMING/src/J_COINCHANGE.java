@@ -1,4 +1,4 @@
-public class COINCHANGE {
+public class J_COINCHANGE {
 
     public long coinCount(int i, int coins[], int amount) {
         if (i == coins.length) {

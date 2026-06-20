@@ -1,4 +1,4 @@
-public class UniquePaths {
+public class E_UniquePaths {
     /// /Top down method tha --> Memoization
     static int dp[][];
 

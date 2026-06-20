@@ -1,4 +1,4 @@
-public class PartitionOfSubsetSUM {
+public class H_PartitionOfSubsetSUM {
 
 
     private boolean subsumdp(int i, int[] arr, int target, int dp[][]) {

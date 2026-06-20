@@ -1,10 +1,9 @@
+public class I_UnbounndedKnapSack {
 
-
-public class Zerone_Knapsack {
-
+     static int coins;
     public static void main(String[] args) {
-        int[] val = {2, 3, 4, 5};
-        int[] wt = {10, 3, 1, 3};
+        int[] val = {2, 3, 4, 25};
+        int[] wt = {10, 3, 5, 9};
         int C = 10;
         int n = val.length;
         //// the i   goes to 0 -->  n-1 and the C goes to C --> 0
@@ -14,19 +13,20 @@ public class Zerone_Knapsack {
                 dp[i][j] = -1;
             }
         }
-
-//        System.out.println("The maximum loot " + loot(0, val, wt, C));
-        System.out.println("The maximum loot " + lootdp(0, val, wt, C, dp));
+        coins = 0;
+        System.out.println("The maximum loot " + loot(0, val, wt, C, coins));
+        System.out.println(coins);
+//        System.out.println("The maximum loot " + lootdp(0, val, wt, C, dp));
     }
 
-    private static int loot(int i, int[] val, int[] wt, int C) {
+    private static int loot(int i, int[] val, int[] wt, int C, int coins) {
 
         if (i == wt.length) return 0;
 
-        int skip = loot(i + 1, val, wt, C);
+        int skip = loot(i + 1, val, wt, C, coins);
         if (wt[i] > C) return skip;
 
-        int take = val[i] + loot(i + 1, val, wt, C - wt[i]);
+        int take = val[i] + loot(i, val, wt, C - wt[i], coins +1); //// we can loot the anything any time
 
         return Math.max(skip, take);
     }
@@ -40,17 +40,10 @@ public class Zerone_Knapsack {
         //// just after the base case
         if (dp[i][C] != -1) return dp[i][C]; ////  andha dun dp lgg rha hain yaha
 
-        int skip = lootdp(i + 1, val, wt, C,dp);
+        int skip = lootdp(i + 1, val, wt, C, dp);
         if (wt[i] > C) return dp[i][C] = skip;/// skip the step when you get the weight is greater than Capacity
-        int take = val[i] + lootdp(i + 1, val, wt, C - wt[i],dp);
+        int take = val[i] + lootdp(i, val, wt, C - wt[i], dp);
         return dp[i][C] = Math.max(skip, take); /// / before giving the answer store it in the dp array
     }
-
-
-
-
-
-
-
 
 }

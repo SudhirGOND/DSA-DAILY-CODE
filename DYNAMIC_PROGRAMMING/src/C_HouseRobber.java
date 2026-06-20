@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class HouseRobber {
+public class C_HouseRobber {
     /// edge case -> adjacent gharsse no chori allowed i to i + 2 ////i + 1
     // for dp two changes --> changes ko record krr lo
     static int[] dp;
