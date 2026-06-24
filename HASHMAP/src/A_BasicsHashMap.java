@@ -20,6 +20,6 @@ public class A_BasicsHashMap {
             System.out.println(key + " " + map.get(key));
 
         }
-    }
+    }w
 
 }
