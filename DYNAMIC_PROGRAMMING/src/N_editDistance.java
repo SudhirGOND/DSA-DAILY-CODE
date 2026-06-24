@@ -21,6 +21,7 @@ public class N_editDistance {
 
     private static int minstep(int i, int j, StringBuilder a, StringBuilder b) {
 
+
         if (i == -1) return j + 1;
         if (j == -1) return i + 1;
 
