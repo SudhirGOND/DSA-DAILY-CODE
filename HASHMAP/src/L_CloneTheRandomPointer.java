@@ -1,7 +1,7 @@
 
 import java.util.HashMap;
 
-public class CloneTheRandomPointer {
+public class L_CloneTheRandomPointer {
 
     static class Node {
         int val;

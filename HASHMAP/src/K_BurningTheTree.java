@@ -1,10 +1,9 @@
-import java.awt.event.PaintEvent;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BurningTheTree {
+public class K_BurningTheTree {
 
 
     class Pair {

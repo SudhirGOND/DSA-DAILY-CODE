@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class BasicsHashMap {
+public class A_BasicsHashMap {
 
     public static void main(String[] args) {
 

@@ -37,7 +37,7 @@
 //}
 //
 
-public class MostFrequenceChar {
+public class C_MostFrequenceChar {
 
     public char getMaxOccuringChar(String s) {
 

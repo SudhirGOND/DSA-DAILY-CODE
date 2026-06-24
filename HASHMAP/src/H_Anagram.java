@@ -30,7 +30,7 @@
 
 import java.util.HashMap;
 
-public class Anagram {
+public class H_Anagram {
 
     public static boolean isAnagram(String s, String t) {
 

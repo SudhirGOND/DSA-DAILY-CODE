@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.HashSet;
 
-class IntersectionOFArrays {
+class E_IntersectionOFArrays {
     public int[] intersection(int[] arr1, int[] arr2) {
         HashSet<Integer> set = new HashSet<>(); /// holds only the unique values
         int min = Math.min(arr1.length, arr2.length);

@@ -1,8 +1,7 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
-class kfrequent {
+class D_kfrequent {
 
 
     class Pair implements Comparable<Pair> {

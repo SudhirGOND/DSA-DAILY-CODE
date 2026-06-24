@@ -1,7 +1,6 @@
-import java.util.HashSet;
 import java.util.TreeSet;
 
-public class BasicHashMap {
+public class B_BasicHashMap {
 
 //  this is the main class
 //    HashSet → Just a collection of elements

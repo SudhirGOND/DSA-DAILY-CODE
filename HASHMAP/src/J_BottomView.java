@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class TopView {
+public class J_BottomView {
 
     class Pair {
         Node node;
@@ -16,7 +16,7 @@ public class TopView {
     }
 
 
-    public ArrayList<Integer> topview(Node root) {
+    public ArrayList<Integer> bottomview(Node root) {
 
 
         ArrayList<Integer> ans = new ArrayList<>();
@@ -25,7 +25,7 @@ public class TopView {
         q.add(new Pair(root, 0)); /// q mein 1 element daale diye for the BFS
         int minDist = Integer.MAX_VALUE;
         int maxDist = Integer.MIN_VALUE;
-        while (q.size() > 0) {
+        while (!q.isEmpty()) {
             /// phla node nikala ..uske node and dist
             Pair front = q.poll();
             Node node = front.node;
@@ -35,10 +35,9 @@ public class TopView {
             minDist = Math.min(minDist, dist);
             maxDist = Math.max(maxDist, dist);
 
-            if (!map.containsKey(dist))
-                map.put(dist, node.val); ///  phli baar jo sbse uper aayega usko dalloge (dist == baraber ho)
-//           map.put(dist, node.val); ///  jiska first occurrence hogha vo (top view mein daal denge )
-///// last occurence hoga to bottom view mein daal denge
+
+            map.put(dist, node.val); ///  jiska first occurrence hogha vo (top view mein daal denge )
+            ///// last occurence hoga to bottom view mein daal denge
             if (node.left != null) q.add(new Pair(node.left, dist - 1));/// left ja rhe
             if (node.right != null) q.add(new Pair(node.right, dist + 1));/// right ja rrhee
 

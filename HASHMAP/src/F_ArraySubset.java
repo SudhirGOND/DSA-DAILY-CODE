@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class ArraySubset {
+public class F_ArraySubset {
 
     public boolean isSubset(int a[], int b[]) {
 

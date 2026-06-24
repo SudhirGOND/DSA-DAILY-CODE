@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class PairsWith_Difference {
+public class M_PairsWith_Difference {
 
     int countPairs(int[] arr, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
