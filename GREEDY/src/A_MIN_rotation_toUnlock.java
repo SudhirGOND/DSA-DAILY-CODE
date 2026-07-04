@@ -4,6 +4,8 @@ public class A_MIN_rotation_toUnlock {
     public static void main(String[] args) {
 
 
+
+
         int random = 223;
         int password = 3394;
         int ans = 0;
