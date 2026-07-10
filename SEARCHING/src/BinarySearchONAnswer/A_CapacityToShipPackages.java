@@ -1,6 +1,6 @@
 package BinarySearchONAnswer;
 
-public class CapacityToShipPackages {
+public class A_CapacityToShipPackages {
 
     public static int lengthWeightCapacity(int arr[], int n, int d) {
 
