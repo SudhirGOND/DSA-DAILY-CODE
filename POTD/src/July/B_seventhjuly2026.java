@@ -1,6 +1,6 @@
 package July;
 
-public class seventhjuly2026 {
+public class B_seventhjuly2026 {
     public static void main(String[] args) {
         sumAndMultiply(204500050);
     }

@@ -3,7 +3,7 @@ package July;
 import java.util.ArrayList;
 import java.util.List;
 
-public class thirtheenthJuly2026 {
+public class E_thirtheenthJuly2026 {
 
     public static void main(String[] args) {
 

@@ -2,7 +2,7 @@ package July;
 
 import java.util.*;
 
-public class twelvethJuly2026 {
+public class C_twelvethJuly2026 {
 
 
     public int[] arrayRankTransform(int[] arr) {
