@@ -12,7 +12,9 @@ public class A_NumberOfProvinces {
         for (int i = 0; i < n; i++) {
 
             if (!visit[i]) {
-                bfs(i, visit, adj);
+//                bfs(i, visit, adj);
+                dfs(i, visit, adj);
+
                 count++;
             }
         }
@@ -22,6 +24,21 @@ public class A_NumberOfProvinces {
 
 
     }
+        //// the code of the dfs
+    private void dfs(int i, boolean[] visit, int[][] adj) {
+
+        int n = adj.length;
+
+        visit[i] = true;/// marked
+
+        for (int j = 0; j < n; j++) {
+            if (adj[i][j] == 1 && !visit[j]) {
+
+                dfs(j, visit, adj);
+            }
+        }
+    }
+
 
     private void bfs(int i, boolean[] visit, int[][] adj) {
 
