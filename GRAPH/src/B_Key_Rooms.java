@@ -11,7 +11,8 @@ public class B_Key_Rooms {
 
         boolean[] visited = new boolean[n];
         visited[0] = true; /// from quetion we get tbhe access
-        bfs(0, adj, visited);
+//        bfs(0, adj, visited);
+        dfs(0, adj, visited);
         for (boolean ele : visited) {
             if (!ele) return false;
 
@@ -35,4 +36,14 @@ public class B_Key_Rooms {
         }
     }
 
+
+    private void dfs(int start, List<List<Integer>> adj, boolean[] visited) {
+
+        visited[start] = true; //  we made the visited array visited
+
+        for (int ele : adj.get(start)) {
+
+            if (!visited[ele]) dfs(ele, adj, visited);
+        }
+    }
 }
