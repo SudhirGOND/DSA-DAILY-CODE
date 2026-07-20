@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class E_cycleDetection {
 
@@ -54,6 +56,47 @@ public class E_cycleDetection {
         return false;
 
 
+    }
+
+
+    /// CODE OF BFS( detection of the undirected graph )
+
+    class Pair {
+        int node;
+        int parent;
+
+        Pair(int node, int parent) {
+            this.node = node;
+            this.parent = parent;
+        }
+    }
+
+    private boolean bfs(int start, ArrayList<ArrayList<Integer>> adj, boolean[] visited) {
+
+        Queue<Pair> q = new LinkedList<>();
+
+        visited[start] = true;
+        q.offer(new Pair(start, -1));
+
+        while (!q.isEmpty()) {
+
+            Pair current = q.poll();
+            int node = current.node;
+            int parent = current.parent;
+
+            for (int neigh : adj.get(node)) {
+
+                if (!visited[neigh]) {     /// not visited
+                    visited[neigh] = true;   ///  marked them true ( neighbour)
+                    q.offer(new Pair(neigh, node));//// put into the queue
+                } else if (neigh != parent) { ///  if (  visited  && parent !=  node(neigh) )
+                    // A visited neighbor that is not the parent indicates a cycle.
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
 
