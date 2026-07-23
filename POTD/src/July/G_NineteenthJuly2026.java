@@ -1,6 +1,6 @@
 package July;
 
-public class NineteenthJuly2026 {
+public class G_NineteenthJuly2026 {
 
 
     /// givent the string -->  bcabc ==> " abc"
