@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class K_NetworkDelay {
+public class K_NetworkDelay_DIJKSTRA {
 
     class Pair {
 
@@ -49,7 +49,7 @@ public class K_NetworkDelay {
             int currDist = top.dist;
 
             if (currDist > distArray[currNode]) {
-                continue; /// skip this itration
+                continue; /// skip this iteration
             }
             for (int[] row : adj.get(currNode)) {
 
