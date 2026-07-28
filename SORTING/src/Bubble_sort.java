@@ -24,8 +24,7 @@ public class Bubble_sort {
 //    }
 
 
-        int [] arr = {2, 4, 56, 6, 2232,9,0};
-        print(arr);
+        int[] arr = {2, 4, 56, 6, 2232, 9, 0};
         for (int i = 0; i < arr.length - 1; i++) {
             int x = 0;// check that the arr is already sorted ?
 
