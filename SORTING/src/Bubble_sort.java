@@ -8,7 +8,7 @@ public class Bubble_sort {
 
     public static void print(int[] a) {
 
-       System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(a));
 
     }
 
@@ -44,44 +44,7 @@ public class Bubble_sort {
         print(arr);//printing the array
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
