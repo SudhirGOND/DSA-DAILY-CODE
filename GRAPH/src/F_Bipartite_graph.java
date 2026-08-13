@@ -2,7 +2,19 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
+//Intuition Added
+//Goal: Check if the graph can be divided into 2 colors.
+//-1: Node is unvisited/uncolored.
+//0/1: Represent the two colors.
+//BFS: Start from each unvisited node.
+//1 - color: Give the neighbor the opposite color.
+//Same color: If connected nodes have the same color → Not Bipartite.
+//Outer loop: Handles disconnected components.
+//Final: If no same-colored adjacent nodes → Bipartite
+
+
 public class F_Bipartite_graph {
+
     static boolean ans;
 
     public boolean isBipartite(int[][] adj) {
