@@ -3,6 +3,29 @@ import java.util.Queue;
 
 public class H_Kahns_Algorithm {
 
+
+
+
+
+
+//
+//    1. Build graph
+//2. Calculate indegree of every course
+//3. Put all courses with indegree = 0 into a queue
+//4. Repeatedly:
+//            - remove a course from queue
+//      - count it as completed
+//      - reduce indegree of its neighbors
+//      - if a neighbor's indegree becomes 0,
+//    put it into the queue
+//5. If completed == numCourses:
+//            return true
+//            else:
+//            return false
+
+
+
+
     public ArrayList<Integer> topoSort(int V, int[][] edges) {
 
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
@@ -58,4 +81,7 @@ public class H_Kahns_Algorithm {
 
         return ans;
     }
+
+
+
 }
