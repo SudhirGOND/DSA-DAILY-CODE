@@ -1,5 +1,20 @@
 import java.util.*;
 
+
+//Goal: Find how long it takes for the signal from k to reach all nodes.
+//Main idea: Find the shortest distance from k to every node.
+//        Algorithm: Use Dijkstra because all edge weights are positive.
+//Adjacency list: Store each node's outgoing (neighbor, weight) edges.
+//distArray: Store the currently known shortest distance from k to each node.
+//        Initialize: Set dist[k] = 0 because the signal starts at k.
+//Min-heap: Always process the node having the smallest known distance.
+//        Relaxation: For every neighbor, calculate newDist = currentDist + edgeWeight.
+//        Update: If newDist < dist[neighbor], update the distance and push it into the heap.
+//        Repeat: Continue until the priority queue becomes empty.
+//Unreachable node: If any node's distance is still Integer.MAX_VALUE, return -1.
+//Final answer: Take the maximum shortest distance, because the last node to receive the signal determines the total delay.
+
+
 public class K_NetworkDelay_DIJKSTRA {
 
     class Pair {
