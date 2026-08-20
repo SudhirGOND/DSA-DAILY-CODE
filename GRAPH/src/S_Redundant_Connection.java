@@ -10,7 +10,7 @@ public class S_Redundant_Connection {
     public int[] findCycle(int[][] edges) {
 
         int n = edges.length;
-        // parent array ko intialise karenge
+        // parent array ko initialise karenge
         // also initialize the size array
         parent = new int[n + 1];
         size = new int[n + 1];
@@ -19,8 +19,7 @@ public class S_Redundant_Connection {
             parent[i] = i;
             size[i] = 1;
         }
-
-        // return the answer in the 2 sie array
+        /// return the answer in the 2d array
         int[] ans = new int[2];
 
         for (int[] arr : edges) {
