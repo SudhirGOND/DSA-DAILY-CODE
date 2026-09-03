@@ -2,6 +2,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.PriorityQueue;
 
+//  the intuition added
+//Start from any node and mark it visited.
+//Add all its edges to a min-heap (PriorityQueue).
+//Pick the cheapest edge from the heap.
+//If its destination is unvisited, add that edge to the MST.
+//Mark the new node visited and add its edges to the heap.
+//Repeat until all nodes are visited.
+//Sum the selected edge weights to get the MST cost.
+
 public class O_Prims_Algorithm {
 
     // Stores edge information
