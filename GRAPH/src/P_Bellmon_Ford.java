@@ -1,5 +1,32 @@
 import java.util.Arrays;
 
+//Feature	                    Bellman-Ford	Dijkstra
+//Single source	                    ✅          	✅
+//Negative edges	                ✅	            ❌
+//Negative cycle detection	        ✅	            ❌
+//Time	                            O(VE)	      Usually faster
+//Basic idea	            Repeated relaxation	   Greedy
+//Faster?	                       ❌	             ✅
+
+
+//Dijkstra = faster, but no negative edges.
+//Bellman-Ford = slower, but supports negative edges and detects negative cycles.
+
+
+//Purpose: Find the shortest paths from one source.
+//Start: Source = 0, others = ∞.
+//Relax: dist[v] = min(dist[v], dist[u] + wt).
+//Repeat: Relax all edges V−1 times.
+//Why V−1: Shortest path has at most V−1 edges.
+//Negative edges: ✅ Supported.
+//Negative cycle: Extra pass + any improvement → negative cycle.
+//Optimization: No update → stop early.
+//Time: O(VE).
+//Space: O(V).
+//Key idea: Keep improving distances until they stabilize.
+
+
+
 public class P_Bellmon_Ford {
 
     public static void main(String[] args) {
