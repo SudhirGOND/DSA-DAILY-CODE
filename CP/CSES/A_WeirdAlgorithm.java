@@ -19,14 +19,15 @@
  **/
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class WeirdAlgorithm {
+public class A_WeirdAlgorithm {
 
 
-    public static void main(String[] args) {
-//
+    public static void main(String[] args) throws IOException {
+//  This is not Efficient code as  this code what it takes to be!!
 //        Scanner sc = new Scanner(System.in);
 //        int n = sc.nextInt();
 //        System.out.print(n + " ");
@@ -42,5 +43,25 @@ public class WeirdAlgorithm {
 //        }
 
 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        long n = Long.parseLong(br.readLine());
+        StringBuilder sb = new StringBuilder();
+        while (n != 1) {
+            sb.append(n).append(" ");
+            if (n % 2 == 0) {
+                n /= 2;
+            } else {
+                n = 3 * n + 1;
+            }
+        }
+
+        sb.append(1);//  at the end last mein  1 lga do
+
+        System.out.println(sb);
     }
+
+    /// Time:  O(k)
+    /// Space: O(k)
+
+
 }
