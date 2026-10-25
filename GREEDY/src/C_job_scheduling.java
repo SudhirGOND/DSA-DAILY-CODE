@@ -1,3 +1,20 @@
+/**
+ * Brute force se Greedy tak kaise sochen?
+ * Ab apne aap se 3 questions poochho:
+ * 1. Kya har job ko select karna zaroori hai? Nahi.
+ * 2. Kya har job ka profit same hai? Nahi.
+ * 3. Kya hum high-profit job ko pehle consider kar sakte hain aur uske liye feasible slot find kar sakte hain? Haan.
+ * Yahi greedy intuition hai.
+ * <p>
+ * Greedy rule:
+ * 1. Jobs ko profit ke descending order mein sort karo.
+ * 2. Har job ke liye uski deadline se lekar slot 1 tak peeche search karo.
+ * 3. Jo sabse late empty slot mile, usmein job schedule karo.
+ * 4. Koi slot na mile, toh job skip kar do.
+ */
+
+
+
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
